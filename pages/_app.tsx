@@ -12,7 +12,7 @@ import "@pankod/refine-antd/dist/styles.min.css";
 import dataProvider from "@pankod/refine-simple-rest";
 import { RefineKbarProvider } from "@pankod/refine-kbar";
 import { authProvider } from "src/authProvider";
-import { PostList, PostCreate, PostEdit, PostShow } from "@components/posts";
+import { UserList } from "@components/users";
 import {
   Title,
   Header,
@@ -22,7 +22,7 @@ import {
   OffLayoutArea,
 } from "@components/layout";
 
-const API_URL = "https://api.fake-rest.refine.dev";
+const API_URL = "http://178.79.159.75:1111";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
@@ -37,11 +37,8 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         LoginPage={AuthPage}
         resources={[
           {
-            name: "posts",
-            list: PostList,
-            create: PostCreate,
-            edit: PostEdit,
-            show: PostShow,
+            name: "users",
+            list: UserList,
           },
         ]}
         Title={Title}
